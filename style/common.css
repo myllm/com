@@ -1,0 +1,134 @@
+/* ------------------------------------------------------------------------ reset */
+/*
+	Name:			mod_reset
+	Explain:		重定义浏览器默认样式
+*/
+    @-ms-viewport { width: device-width; }
+	* { word-wrap: break-word; -webkit-box-sizing: border-box; -moz-box-sizing:border-box; box-sizing: border-box; }
+    *, *::before, *::after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+	html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; -ms-overflow-style: scrollbar; }
+	body, input, button, select, textarea { font-family: "Helvetica Neue",Helvetica,STHeiti,"Microsoft YaHei",Arial,Verdana,sans-serif; font-size: .875rem; color: #585858; }
+    body { background-color: #fff; }
+    textarea { resize: none; }
+	html, body, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p, blockquote, pre, hr, figure, table, caption, th, td, form, fieldset, legend, input, button, textarea, menu { margin: 0; padding: 0; }
+	html, body, fieldset, iframe { border: 0; }
+	table { empty-cells: show; border-collapse: collapse; }
+		caption, th { text-align: left; font-weight: normal; }
+	ul li { list-style: none; }
+    h1, h2, h3, h4, h5, h6 { font-size: 1em; }
+	i, cite, em, var, address, dfn { font-style: normal; }
+	sup, sub { font-size: 83%; }
+	pre, code, kbd, samp { font-family: inherit; }
+	q:before, q:after { content: none; }
+	del, ins, u, s, a, a:hover { text-decoration: none; }
+    a, .color { color: #585858; }
+	/* 解决A标签点击后的虚线框问题 */
+	a, a:hover { blr: expression(this.onFocus=this.blur()); outline: none; }
+	a:active { star: expression(this.onFocus=this.blur()); }
+    abbr[title] { border-bottom: none; text-decoration: underline; text-decoration: underline dotted; }
+    abbr[title], abbr[data-original-title] { cursor: help; }
+
+
+/* ------------------------------------------------------------------------ function */
+/*
+	Name:			mod_float
+	Sample:			class="fl/fr"
+	Explain:		.fl/.fr 浮动 left/right
+*/
+	.fl, .float-left > * { float: left; } .fr, .float-right > * { float: right; }
+
+/*
+	Name:			mod_clearfix
+	Sample:			class="cl"
+	Explain:		Clearfix,避免因子元素浮动而导致的父元素高度缺失问题
+*/
+	.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } .clearfix { zoom: 1; }
+
+/*
+	Name:			mod_img
+	Sample:			class="..."
+	Explain:		定义图片
+*/
+    img { width: auto\9; height: auto; max-width: 100%; vertical-align: middle; border: 0; -ms-interpolation-mode: bicubic; }
+
+
+
+/*
+	Making HTML5 work in IE6, IE7 & IE8
+*/
+	header, footer, section, article, aside, nav, hgroup, address, figure, figcaption, menu, details { display: block; }
+    audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+    audio:not([controls]) { display: none; }
+
+/* layout */
+body{min-width: 1200px;}
+header { width: 100%; height: 660px; background: #21116d url(../image/banner.png) no-repeat center; position: relative; }
+    .head { clear: both; width: 1200px; height: 104px; margin: auto; }
+        .head .logo { width: 200px; height: 38px; padding-top: 33px; }
+        .head .sub { float: right; }
+            .head .sub li { float: right; color: #fff; line-height: 104px; margin: 0 10px; }
+                .head .sub li a, .head .sub li a:link { color: #fff; }
+                .head .sub p { background: url(../image/language.png) no-repeat; width: 120px; height: 30px; line-height: 30px; margin-top: 37px; text-align: center; }
+    nav { clear: both; width: 100%; height: 50px; border-bottom: 1px solid #4e418a; font-size: 1.125rem; }
+        nav .clearfix { width: 1200px; margin: auto; }
+            nav li { width: 120px; height: 50px; text-align: center; color: #fff; position: relative; }
+            nav .fl li { float: left; }
+            nav .fr li { float: right; }
+                nav li a, nav li a:link { color: #fff; }
+                nav i { position: absolute; left: 0; bottom: 0; width: 120px; height: 1px; background-image: url(../image/nav-line.png); background-repeat: no-repeat; display: none; }
+    .banner { width: 1200px; height: 506px; margin: auto; position: relative; }
+        .exponential { position: absolute; left: 0; bottom: 30px; width: 1190px; height: 100px; background: rgba(0,0,0,.4); -webkit-border-radius: 500px !important; -moz-border-radius: 500px !important; border-radius: 500px !important; }
+            .exponential li { float: left; width: 16.666%; text-align: center; font-size: 1rem; color: #fff; margin-top: 30px; }
+                .exponential .up em { color: #00ff00; }
+                .exponential .down em { color: #f80101; }
+    .show { background-color: #060c33; width: 100%; max-width: 1920px; color: #fff; margin: auto; }
+        .show li { float: left; width: 25%; height: 500px; background-repeat: no-repeat; text-align: center; }
+        .show img { margin: 8rem 0 2rem;}
+        .show-a { background-image: url(../image/show-1.png); }
+        .show-b { background-image: url(../image/show-2.png); }
+        .show-c { background-image: url(../image/show-3.png); }
+        .show-d { background-image: url(../image/show-4.png); }
+            .show h4 { font-size: 1.25rem; }
+            .show p { width: 60%; padding: 2rem 0; margin: auto; line-height: 1.75rem; }
+    .notice { background: #060c33 url(../image/notice.png) no-repeat center top; width: 100%; height: 700px; }
+        .notice .box { width: 1200px; margin: auto; }
+            .notice .title { text-align: center; padding: 90px 0 60px; }
+                .notice .title h4 { font-size: 1.25rem; color: #fff; }
+                .notice .title em { color: #666; line-height: 22px; }
+                .notice .content .fl { position: relative; width: 580px; }
+                    .notice .content .fl h3 { font-size: 1.125rem; line-height: 48px; color: #ccc; margin-top: 10px; }
+                        .notice .content .fl h3 a, .notice .content .fl h3 a { color: #ccc; }
+                    .notice .content .fl p { color: #999; }
+                    .notice .content .fl em { position: absolute; top: 240px; right: 0; }
+                    .notice .content .fl span { line-height: 60px; font-size: 1.125rem; color: #01ffff; }
+                        .notice .content .fl span a, .notice .content .fl span a:link { color: #01ffff; }
+                .notice .content .fr { width: 580px; }
+                    .notice .content .fr li { height: 50px; border-bottom: 1px solid #2d3259; color: #ccc; font-size: 1rem; margin-bottom: 25px; }
+                        .notice .content .fr li span { float: right; color: #999; }
+                        .notice .content .fr li a, .notice .content .fr li a:link { color: #ccc; }
+    .download { background-color: #0b134b; width: 100%; height: 750px; }
+        .download .clearfix { width: 1200px; margin: auto; position: relative; }
+            .download .fl { width: 580px }
+                .download .fl img { position: absolute; }
+                .download .fl .a { bottom: 10px; z-index: 1; }
+                .download .fl .b { left: 250px; bottom: 100px; z-index: 2; }
+            .download .fr { width: 440px; margin: 160px 0; position: relative; }
+                .download .fr h4, .download .fr p { font-size: 24px; color: #fff; }
+                .download .fr p { margin: 15px 0 50px; }
+                    .download .fr p span { margin-right: 20px; }
+                .download .fr .clearfix { width: auto !important; }
+                    .download .fr .clearfix li { float: left; margin-right: 40px; }
+                        .download .fr .clearfix li em { display: block; color: #ccc; line-height: 50px; text-align: center; font-size: 14px; }
+        .download i { background: url(../image/download-buttom.png) no-repeat; width: 150px; height: 50px; line-height: 50px; margin-top: 30px; text-align: center; color: #fff; font-size: 16px; display: block; }
+        .download .erweima { position: absolute; bottom: 70px; left: -120px; display: none; }
+footer { background-color: #060B2C; width: 100%; height: 500px; }
+    footer .title { text-align: center; padding: 60px 0 20px; }
+        footer .title h4 { font-size: 24px; color: #fff; }
+        footer .title em { color: #ccc; }
+    footer .link { text-align: center; margin: 20px 0 50px; }
+        footer .link ul { display: inline-block; }
+            footer .link li { float: left; background-color: #0B134B; margin: 0 15px; width: 200px; height: 60px; }
+    footer .menu, footer .copyright { text-align: center; color: #3949B7; font-size: 16px; }
+        footer .menu span { margin: 0 30px; }
+            footer .menu a, footer .menu a:link { color: #3949B7; }
+    footer .bottomlogo { width: 151px; height: 30px; margin: 60px auto; }
